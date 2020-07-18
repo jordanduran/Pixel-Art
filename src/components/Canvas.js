@@ -10,9 +10,9 @@ const Canvas = props => {
   );
 
   const changeColor = (rowIndex, colIndex) => {
-    const newMatrix = JSON.parse(JSON.stringify(matrix))
-      newMatrix[rowIndex][colIndex] = props.currentColor
-        setMatrix(newMatrix)
+    const newMatrix = JSON.parse(JSON.stringify(matrix));
+    newMatrix[rowIndex][colIndex] = props.currentColor;
+    setMatrix(newMatrix);
   };
 
   return (
@@ -22,7 +22,7 @@ const Canvas = props => {
           return (
             <Pixel
               key={`${rowIndex}-${colIndex}`}
-              background={Colors[matrix[rowIndex[colIndex]]]}
+              background={Colors[matrix[rowIndex][colIndex]]}
               onClick={e => changeColor(rowIndex, colIndex)}
             />
           );
